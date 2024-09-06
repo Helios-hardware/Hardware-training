@@ -573,6 +573,32 @@ merge后面的分支就是将要合并的分支，git前面的分支就是合并
 
 上面那张图片显示的就是把dev分支合并到main分支
 
+但是注意，这样的merge会把dev分支上所有的提交历史都合并到main分支上面（会显得杂乱无章，所以推荐下面这个）
+
+* 只合并特定的提交到主分支（用最多的）
+
+先查看需要合并的分支的哈希值，可以使用下面的命令行来找到提交历史
+
+```
+git log --oneline
+```
+
+然后再切换到你需要合并的分支，比如我想要把dev-llx分支的最后一次提交合并到main分支上
+
+```
+git switch main
+```
+
+```
+git cherry-pick <需要合并的提交的哈希值>
+```
+
+<img src="assets/image-20240906213510052.png" alt="image-20240906213510052" style="zoom:67%;float:left" />
+
+那么分支图就会像下面这样（使用GitKraken生成的分支图，主分支只留下完成的最终版本）
+
+<img src="assets/image-20240906213616738.png" alt="image-20240906213616738" style="zoom:67%;float:left" />
+
 * 显示分支图
 
 ```
