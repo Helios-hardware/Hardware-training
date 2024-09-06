@@ -675,6 +675,15 @@ Git 会自动生成一个合并提交的消息，你可以修改它或直接保�
 git push origin main
 ```
 
+<<<<<<< HEAD
+=======
+#### 3.10.3 分支操作（看起来清晰一点）
+
+<img src="assets/image-20240906221645906.png" alt="image-20240906221645906" style="zoom:67%;float:left" />
+
+类似于这种图，一般来说，在dev-llx分支上，我一般放的是一版版迭代（还会有一支dev-llx-test修改小bug用），然后只把dev-llx里面的版本基本完善好的放入main分支里面（cherry-pick）。也有每个提交都挺重要的，就直接merge上去了
+
+>>>>>>> dev-llx
 ### 3.11 回退和rebase
 
 * 回退
