@@ -443,6 +443,10 @@ mixed表示回退到一个版本，并且保留工作区但是丢弃暂存区的
 
 <img src="assets\image-20240904195137263.png" alt="image-20240904195137263" style="zoom:67%;float:left" />
 
+* 如果要修改文件夹的名称的话，git add "现在这个文件夹的名称"，再git add "原本那个文件夹的名称"
+
+<img src="assets/image-20240908174446461.png" alt="image-20240908174446461" style="zoom:67%;float:left" />
+
 ### 3.7 查看文件差异
 
 ```
