@@ -798,3 +798,38 @@ git push origin feature-branch
 <img src="assets\image-20240905122019760.png" alt="image-20240905122019760" style="zoom:67%;float:left" />
 
 就剋看到分支图了
+
+
+
+### 3.14 在github上传超过100MB大小的文件
+
+Github有一个限制，不能上传超过100MB大小的文件。解决方法如下：
+
+* 首先，需要安装Git LFS，可以从Git LFS官方网站下载，[https://git-lfs.com/](https://git-lfs.com/)
+
+<img src="assets/image-20240912003205261.png" alt="image-20240912003205261" style="zoom:67%;float:left" />
+
+* 然后进入powershell，输入安装命令
+
+```
+git lfs install
+```
+
+* 然后进入需要管理的仓库
+
+```
+git lfs track "file"
+```
+
+其中file是需要上传的大文件。
+
+* 执行完命令后会发现目录下生成了一个"**.gitattributes**"文件，文件内记录了我们要上传文件的信息。只有先把".gitattributes"传上去，才可以上传大文件。
+
+```
+git add .gitattributes
+git commit -m "submit file"
+git push origin main 
+```
+
+* 上传完毕后，开始上传大文件。
+
