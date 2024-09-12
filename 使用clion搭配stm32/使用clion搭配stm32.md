@@ -1,7 +1,5 @@
 # 使用clion搭配stm32
 
-# 使用clion搭配stm32
-
 在这个框架下开发环境需要：
 
 * Clion ：IDE
@@ -27,7 +25,7 @@
 
 ### 2.2 下载arm-gcc
 
-* 进入官网下载windows版的arm交叉编译器
+* 进入官网下载windows版的arm交叉编译器[Arm GNU Toolchain Downloads – Arm Developer](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
 
 <img src="assets/image-20240912154558436.png" alt="image-20240912154558436" style="zoom:67%;float:left" />
 
