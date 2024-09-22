@@ -169,3 +169,62 @@ source [find target/stm32f1x.cfg]
 ![image-20240912171634839](assets/image-20240912171634839.png)
 
 只要出现旁边那个已下载固件，就算成功，左边的虽然是红色字体，但不是报错
+
+## 4 使用clion管理git
+
+### 4.1 在clion中打开整个仓库
+
+* 直接打开那个仓库的整个文件夹
+
+![image-20240923001100241](assets/image-20240923001100241.png)
+
+* 然后可以看到那个仓库下面的所有文件，左下角有个Git分支类似的图标
+
+<img src="assets/image-20240923001136853.png" alt="image-20240923001136853" style="zoom:80%;float:left" />
+
+* 点击那个图标可以看到，整个仓库的git分支图
+
+![image-20240923001431563](assets/image-20240923001431563.png)
+
+### 4.2 在clion中给仓库添加.gitignore文件
+
+* 如果忘了.gitignore文件的，回到“简单的github使用与git操作说明”那节
+
+* 先在插件这边下载.ignore
+  1. 文件——>设置
+
+<img src="assets/image-20240923001912452.png" alt="image-20240923001912452" style="zoom:67%;float:left" />
+
+	2. 点击插件，然后下载.ignore
+
+<img src="assets/image-20240923002034420.png" alt="image-20240923002034420" style="zoom:80%;float:left" />
+
+* 下载完.ignore，叉掉设置，回到左边的项目，新建文件（右键点击——>.ignore File ——>.gitignore File(Git)）
+
+![image-20240923002149956](assets/image-20240923002149956.png)
+
+* 点击Example user template，再点击Generate
+
+<img src="assets/image-20240923002254115.png" alt="image-20240923002254115" style="zoom:67%;float:left" />
+
+* 能看见生成了.gitignore文件，里面的代码如上图，对这里面的代码进行修改，修改成下面这样
+
+```
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+
+# 整个.idea文件夹都不会上传
+.idea
+
+# 后缀为.gitignore文件不会上传，后缀为.iml文件不会上传
+*.gitignore
+*.iml
+out
+gen
+```
+
+![image-20240923002435982](assets/image-20240923002435982.png)
+
+这样在git管理的时候，里面的文件/文件夹就不会上传了
