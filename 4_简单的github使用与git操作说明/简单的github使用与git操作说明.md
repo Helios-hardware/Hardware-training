@@ -341,7 +341,7 @@ git fetch
 #### 3.5.4 创建仓库
 
 ```
-//方式一：本地
+//方式一：本地（一般不用）
 git init
 //方式二：远程服务器
 git clone
@@ -351,18 +351,6 @@ git clone
 mkdir git-test  //创建目录
 cd git-test  //切换目录
 ```
-
-* 创建本地仓库
-
-<img src="assets\image-20240904121832957.png" alt="image-20240904121832957" style="zoom:68%;float:left" />
-
-查看当前目录下所有的文件（包括隐藏文件）
-
-```
-Get-ChildItem -Force
-```
-
-<img src="assets\image-20240904122120166.png" alt="image-20240904122120166" style="zoom:67%;float:left" />
 
 * 拉远程仓库（这里采用的是和上面ssh不同的https的方式，不需要配置ssh）
 
@@ -419,30 +407,6 @@ git commit
 
 这个命令只会提交暂存区的文件，不会提交工作区的文件
 
-* 查看提交历史
-
-```
-git log
-```
-
-<img src="assets\image-20240904194952905.png" alt="image-20240904194952905" style="zoom:67%;float:left" />
-
-* git reset的三种模式
-
-```
-git reset--soft
-git reset--hard
-git reset--mixed
-```
-
-soft表示回退到一个版本，并且保存工作区和暂存区的内容
-
-hard表示回退到一个版本，并且丢弃工作区和暂存区的内容
-
-mixed表示回退到一个版本，并且保留工作区但是丢弃暂存区的内容
-
-<img src="assets\image-20240904195137263.png" alt="image-20240904195137263" style="zoom:67%;float:left" />
-
 * 如果要修改文件夹的名称的话，git add "现在这个文件夹的名称"，再git add "原本那个文件夹的名称"
 
 <img src="assets/image-20240908174446461.png" alt="image-20240908174446461" style="zoom:67%;float:left" />
@@ -453,45 +417,7 @@ mixed表示回退到一个版本，并且保留工作区但是丢弃暂存区的
 git diff
 ```
 
-当我修改了re.txt文件里面的内容
-
-<img src="assets\image-20240904195659085.png" alt="image-20240904195659085" style="zoom: 67%;float:left" />
-
-重新提交暂存区和本地仓库
-
-<img src="assets\image-20240904195914800.png" alt="image-20240904195914800" style="zoom:67%;float:left" />
-
-用git比较当前版本和上一个版本之间的差异
-
-```
-git diff HEAD~ HEAD
-```
-
-git diff还有其他的对比差异，可以自己查询，不一一列举
-
-### 3.8 删除文件
-
-```
-rm
-```
-
-<img src="assets\image-20240904201447687.png" alt="image-20240904201447687" style="zoom:67%;float:left" />
-
-然后再使用git add来删除暂存区的文件
-
-<img src="assets\image-20240904201845644.png" alt="image-20240904201845644" style="zoom:67%;float:left" />
-
-```
-git rm
-```
-
-<img src="assets\image-20240904202009963.png" alt="image-20240904202009963" style="zoom:67%;float:left" />
-
-最后要记得提交，否则删除的文件在版本库中还会存在
-
-<img src="assets\image-20240904202135744.png" alt="image-20240904202135744" style="zoom:67%;float:left" />
-
-### 3.9 .gitignore忽略文件
+### 3.8 .gitignore忽略文件
 
 应该忽略的文件：
 
@@ -500,56 +426,13 @@ git rm
 3. 运行时生成的日志文件、缓存文件、临时文件
 4. 涉及身份、密码、口令、密钥等敏感信息文件
 
-* 创建 `.gitignore` 文件
+至于怎么使用.gitignore文件，一般我们都是在clion中直接创建，可以先对.gitignore有个印象
 
-```
-// 在powershell中创建
-New-Item -Path .gitignore -ItemType File
+### 3.9 分支
 
-//在cmd中创建
-echo. > .gitignore
-```
+#### 3.9.1 分支基础操作
 
-* 编辑`.gitignore`文件
-
-```
-# 忽略所有的 .log 文件
-*.log
-
-# 忽略 node_modules 目录
-node_modules/
-
-# 忽略所有 .tmp 文件，但不忽略 tmp/important.tmp
-*.tmp
-!tmp/important.tmp
-```
-
-* 提交`.gitignore`文件
-
-```
-git add .gitignore
-git commit -m "Add .gitignore file"
-```
-
-当我创建了re.log文件后
-
-<img src="assets\image-20240904204747414.png" alt="image-20240904204747414" style="zoom:67%;float:left" />
-
-`.gitignore`文件生效有个前提，就是这个文件不能被添加到版本库里面
-
-* 只删除版本库里面的文件，不删除本地文件
-
-```
-git rm --cached re.log//例子
-```
-
-空的文件夹底下如果没有文件的话，是不会被纳入到版本控制里面的，但如果有文件的话，就会被纳入版本控制中
-
-### 3.10 分支
-
-#### 3.10.1 分支基础操作
-
-* 创建新的分支|查看分支
+* **创建新的分支|查看分支**
 
 ```
 git branch
@@ -557,7 +440,7 @@ git branch
 
 <img src="assets\image-20240904220544384.png" alt="image-20240904220544384" style="zoom:67%;float:left" />
 
-* 切换到不同分支
+* **切换到不同分支**
 
 ```
 git switch
@@ -565,7 +448,7 @@ git switch
 
 <img src="assets\image-20240904221029105.png" alt="image-20240904221029105" style="zoom:67%;float:left" />
 
-* 合并分支到主线分支
+* **合并分支到主线分支**
 
 ```
 git merge
@@ -579,7 +462,7 @@ merge后面的分支就是将要合并的分支，git前面的分支就是合并
 
 但是注意，这样的merge会把dev分支上所有的提交历史都合并到main分支上面（会显得杂乱无章，所以推荐下面这个）
 
-* 只合并特定的提交到主分支（用最多的）
+* **只合并特定的提交到主分支**
 
 先查看需要合并的分支的哈希值，可以使用下面的命令行来找到提交历史
 
@@ -603,13 +486,7 @@ git cherry-pick <需要合并的提交的哈希值>
 
 <img src="assets/image-20240906213616738.png" alt="image-20240906213616738" style="zoom:67%;float:left" />
 
-* 显示分支图
-
-```
-git log --graph --oneline --decorate --all
-```
-
-* 删除分支 
+* **删除分支 **
 
 ```
 git branch -d
@@ -617,75 +494,17 @@ git branch -d
 
 <img src="assets\image-20240904222502381.png" alt="image-20240904222502381" style="zoom:67%;float:left" />
 
-* 在删除分支后，把删除的信息推送到远程仓库
+* ==**在删除分支后，把删除的信息推送到远程仓库**==
 
 ```
 git push origin --delete branch-name
 ```
 
-#### 3.10.2解决合并冲突
+#### 3.9.2解决合并冲突
 
-1. **执行合并操作**： 当你尝试合并两个分支时，比如`main`分支和`feature`分支，使用以下命令：
+​	查看两个分支之间的不同，然后修改其中一方。（实际操作后就知道了）
 
-```
-git checkout main
-git pull origin main
-git merge feature
-```
-
-2. **遇到冲突时**： 如果有冲突，Git 会告诉你哪些文件有冲突，并在这些文件中标记冲突区域。
-
-3. **查看冲突文件**： 使用以下命令查看哪些文件有冲突：
-
-```
-git status
-```
-
-冲突的文件会显示为“unmerged paths”。
-
-4. **打开冲突文件**： 打开有冲突的文件，你会看到类似下面的标记：
-
-```
-plaintext复制代码<<<<<<< HEAD
-// 当前分支的内容
-=======
-// 合并分支的内容
->>>>>>> feature
-```
-
-这些标记帮助你确定哪些部分来自当前分支（HEAD），哪些部分来自合并分支（feature）。
-
-5. **解决冲突**： 编辑文件，手动解决冲突，移除冲突标记。决定保留哪些更改，或将它们合并到一个新版本中。
-
-6. **标记冲突已解决**： 一旦你解决了冲突并保存了文件，使用以下命令将它们标记为已解决：
-
-```
-git add <file>
-```
-
-对每一个冲突文件执行`git add`。
-
-7. **完成合并**： 完成所有冲突解决并标记为已解决后，提交合并：
-
-```
-git commit
-```
-
-Git 会自动生成一个合并提交的消息，你可以修改它或直接保存。
-
-8. **推送更改**： 如果你在远程分支上进行了合并，推送更改到远程仓库：
-
-```
-git push origin main
-```
-
-#### 3.10.3 分支操作（看起来清晰一点）
-
-<img src="assets/image-20240906221645906.png" alt="image-20240906221645906" style="zoom:67%;float:left" />
-
-类似于这种图，一般来说，在dev-llx分支上，我一般放的是一版版迭代（还会有一支dev-llx-test修改小bug用），然后只把dev-llx里面的版本基本完善好的放入main分支里面（cherry-pick）。也有每个提交都挺重要的，就直接merge上去了
-
-### 3.11 回退和rebase
+### 3.10 回退和rebase
 
 * 回退
 
@@ -698,17 +517,32 @@ git checkout -b <分支><提交ID>
 ```
 git log --oneline
 git log --oneline -n 10//查看最近10条的提交id
-git log --graph --oneline --decorate --all//直接查看分支图
 ```
 
 <img src="assets\image-20240904223649273.png" alt="image-20240904223649273" style="zoom:67%;float:left" />
 
-#### 3.11.1 rebase操作
+* git reset的三种模式
+
+```
+git reset--soft <哈希值>
+git reset--hard <哈希值>
+git reset--mixed <哈希值>
+```
+
+soft表示回退到一个版本，并且保存工作区和暂存区的内容
+
+hard表示回退到一个版本，并且丢弃工作区和暂存区的内容
+
+mixed表示回退到一个版本，并且保留工作区但是丢弃暂存区的内容
+
+哈希值就是上面那张图片上黄色的字符串![image-20240927021351355](assets/image-20240927021351355.png)
+
+#### 3.10.1 rebase操作
 
 1. **切换到你要rebase的分支**：
 
 ```
-git checkout feature-branch
+git switch feature-branch
 ```
 
 2. **执行rebase**： 将`feature-branch`的提交移到`main`分支的最新提交上：
@@ -717,26 +551,7 @@ git checkout feature-branch
 git rebase main
 ```
 
-3. **解决冲突**： 如果遇到冲突，Git 会暂停rebase过程。解决冲突后，使用：
-
-```
-git add <resolved-file>
-git rebase --continue
-```
-
-4. **中止rebase**（如有必要）： 如果你决定不再继续rebase，可以中止过程：
-
-```
-git rebase --abort
-```
-
-5. **推送更改**： 如果你rebase了远程分支，需要强制推送：
-
-```
-git push origin feature-branch --force
-```
-
-### 3.12 GitHub Flow
+### 3.11 GitHub Flow
 
 GitHub Flow 是一种简化的分支工作流，用于协作开发，特别适合持续部署。基本步骤包括：
 
@@ -767,11 +582,11 @@ git push origin feature-branch
 
 7. **部署**： 合并到`main`分支后，通常会自动触发部署。
 
-### 3.13 git的GUI图形化界面
+### 3.12 git的GUI图形化界面
 
 ==可以跳过到使用clion搭配stm32，队内硬件git管理是搭配着clion这个软件的，队内硬件的软件编写也是使用这个软件==
 
-#### 3.13.1 GitHubDesktop
+#### 3.12.1 GitHubDesktop
 
 这个是github推出的`GitHubDesktop`，对比于`GitKraken`，免费无限制
 
@@ -791,7 +606,7 @@ git push origin feature-branch
 
 但有不足就是，看不到分支图
 
-#### 3.13.2 GitKraken 
+#### 3.12.2 GitKraken 
 
 <img src="assets\image-20240905121901245.png" alt="image-20240905121901245" style="zoom:67%;float:left" />
 
@@ -803,7 +618,7 @@ git push origin feature-branch
 
 
 
-### 3.14 在github上传超过100MB大小的文件
+### 3.13 在github上传超过100MB大小的文件
 
 Github有一个限制，不能上传超过100MB大小的文件。解决方法如下：
 
