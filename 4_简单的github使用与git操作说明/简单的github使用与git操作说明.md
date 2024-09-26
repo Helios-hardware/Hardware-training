@@ -769,6 +769,8 @@ git push origin feature-branch
 
 ### 3.13 git的GUI图形化界面
 
+==可以跳过到使用clion搭配stm32，队内硬件git管理是搭配着clion这个软件的，队内硬件的软件编写也是使用这个软件==
+
 #### 3.13.1 GitHubDesktop
 
 这个是github推出的`GitHubDesktop`，对比于`GitKraken`，免费无限制
