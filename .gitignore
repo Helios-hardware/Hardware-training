@@ -3,7 +3,6 @@
 
 # IntelliJ project files
 .idea
-*.gitignore
 *.iml
 out
 gen
