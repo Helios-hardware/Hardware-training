@@ -228,3 +228,49 @@ gen
 ![image-20240923002435982](assets/image-20240923002435982.png)
 
 这样在git管理的时候，里面的文件/文件夹就不会上传了
+
+### 4.3 使用clion管理git仓库
+
+#### 4.3.1 提交
+
+可以看到现在是在Hardware-training仓库里面，并且是feature分支
+
+<img src="assets/image-20240928031601278.png" alt="image-20240928031601278" style="zoom:67%;float:left" />
+
+#### 4.3.2 切换分支
+
+点击签出，就可以切换分支了
+
+<img src="assets/image-20240928031635319.png" alt="image-20240928031635319" style="zoom:67%;float:left" />
+
+#### 4.3.3 如何从dev分支合并到main分支（在有分支保护的情况下）
+
+当你的dev分支有新的commit并且推送到远程仓库的时候，就可以在github上看到Compare & pull request，点击它，发起PR
+
+<img src="assets/image-20240928031844044.png" alt="image-20240928031844044" style="zoom:67%;float:left" />
+
+在写PR的时候，注意标题和描述都要清晰，避免被打回
+
+<img src="assets/image-20240928032015308.png" alt="image-20240928032015308" style="zoom:67%;float:left" />
+
+当你的PR被审核人通过的时候，可以看到下面界面
+
+<img src="assets/image-20240928032056985.png" alt="image-20240928032056985" style="zoom:67%;float:left" />
+
+当这个时候你再打开你的远程仓库，你会发现你的合并并没有同步到本地仓库，所以，点击左侧的提取所有远程
+
+![image-20240928032202211](assets/image-20240928032202211.png)
+
+然后你可以看到远程仓库的main分支被拉取了下来
+
+![image-20240928032245692](assets/image-20240928032245692.png)
+
+接着点击左侧的本地main分支
+
+<img src="assets/image-20240928032309350.png" alt="image-20240928032309350" style="zoom:67%;float:left" />
+
+然后再点击更新所选
+
+<img src="assets/image-20240928032336008.png" alt="image-20240928032336008" style="zoom:67%;float:left" />
+
+就可以看到本地仓库的main分支和远程仓库的同步了
