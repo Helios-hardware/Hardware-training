@@ -6,17 +6,23 @@
 
 * 锂电池是一种使用锂作为主要成分的电池，它们因高能量密度、长寿命和低自放电率而广泛应用于各种电子设备和电动汽车中。以下是几种常见的锂电池类型：
 
-<img src="assets/image-20240906151722431.png" alt="image-20240906151722431" style="zoom:67%;float:left" /><img src="assets/image-20240906151803936.png" alt="image-20240906151803936" style="zoom:67%;float:left" />
+<img src="assets/image-20240906151722431.png" alt="image-20240906151722431" style="zoom:67%;float:left" />
+
+<img src="assets/image-20240906151803936.png" alt="image-20240906151803936" style="zoom:67%;float:left" />
 
 
 
-<img src="assets/image-20240906151838845.png" alt="image-20240906151838845" style="zoom:67%;float:left" /><img src="assets/image-20240906151859788.png" alt="image-20240906151859788" style="zoom:67%;float:left" />
+<img src="assets/image-20240906151838845.png" alt="image-20240906151838845" style="zoom:67%;float:left" />
+
+<img src="assets/image-20240906151859788.png" alt="image-20240906151859788" style="zoom:67%;float:left" />
 
 
 
 
 
 <img src="assets/image-20240906151945301.png" alt="image-20240906151945301" style="zoom:67%;float:left" />
+
+
 
 * 其中航模电池所用的==锂聚合物电池（LiPo）==，相对比与其他的锂电池，提供较高的能量密度，支持高倍率放电，适合需要快速启动和高功率的应用。但是==需要小心使用和存储，因为LiPo电池如果处理不当可能会引发火灾。充电时需使用专用的充电器，存储时需要保持在适当的电量范围，并避免短路或过充。==
 
